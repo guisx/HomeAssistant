@@ -1,0 +1,100 @@
+#***********************************************************
+#AUTOMATISATION
+#***********************************************************
+alias: Salon - Aquarium - Start
+description: ""
+trigger:
+  - platform: time
+    at: "08:00:00"
+condition: []
+action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      device_id: d953551e21415cc41fb684429a4338b2
+mode: single
+
+alias: Salon - Aquarium - Stop
+description: ""
+trigger:
+  - platform: time
+    at: "20:00:00"
+condition: []
+action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id: d953551e21415cc41fb684429a4338b2
+mode: single
+
+alias: Salon - Aquarium - Start Manuel
+description: ""
+trigger:
+  - platform: time
+    at: "08:05:00"
+condition:
+  - condition: device
+    type: is_off
+    device_id: d953551e21415cc41fb684429a4338b2
+    entity_id: switch.prise_smart_socket_1
+    domain: switch
+action:
+  - service: notify.notify
+    data:
+      message: Aquarium encore éteint
+      data:
+        actions:
+          - action: aquarium_allumage
+            title: Alumer manuellement  
+mode: single
+
+alias: Salon - Aquarium - Manuel Exec Start
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: aquarium_allumage
+condition: []
+action:
+  - service: switch.turn_on
+    data: {}
+    target:
+      device_id: d953551e21415cc41fb684429a4338b2
+mode: single
+
+alias: Salon - Aquarium - Stop Manuel
+description: ""
+trigger:
+  - platform: time
+    at: "20:05:00"
+condition:
+  - condition: device
+    type: is_on
+    device_id: d953551e21415cc41fb684429a4338b2
+    entity_id: switch.prise_smart_socket_1
+    domain: switch
+action:
+  - service: notify.notify
+    data:
+      message: Aquarium encore allumé
+      data:
+        actions:
+          - action: aquarium_eteindre
+            title: Eteindre manuellement  
+mode: single
+
+alias: Salon - Aquarium - Manuel Exec Stop
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: aquarium_eteindre
+condition: []
+action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id: d953551e21415cc41fb684429a4338b2
+mode: single
