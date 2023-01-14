@@ -1,0 +1,136 @@
+alias: Automate your Detector light 
+description: ""
+trigger:
+  - type: motion
+    platform: device
+    device_id: 94d392c5d5f6e12857645d22063c9980
+    entity_id: binary_sensor.0x00124b002444fda8_occupancy
+    domain: binary_sensor
+    id: capteur1on
+  - type: motion
+    platform: device
+    device_id: 62041b233e241f00e79755bfc4dff7e3
+    entity_id: binary_sensor.0x00124b00244508ec_occupancy
+    domain: binary_sensor
+    id: capteur2on
+  - type: motion
+    platform: device
+    device_id: b58241388b8b79bd6056094d25ff294a
+    entity_id: binary_sensor.0x00124b002444b38c_occupancy
+    domain: binary_sensor
+    id: capteur3on
+  - type: no_motion
+    platform: device
+    device_id: 94d392c5d5f6e12857645d22063c9980
+    entity_id: binary_sensor.0x00124b002444fda8_occupancy
+    domain: binary_sensor
+    id: capteur1off
+  - type: no_motion
+    platform: device
+    device_id: 62041b233e241f00e79755bfc4dff7e3
+    entity_id: binary_sensor.0x00124b00244508ec_occupancy
+    domain: binary_sensor
+    id: capteur2off
+  - type: no_motion
+    platform: device
+    device_id: b58241388b8b79bd6056094d25ff294a
+    entity_id: binary_sensor.0x00124b002444b38c_occupancy
+    domain: binary_sensor
+    id: capteur3off
+condition: []
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: capteur1on
+        sequence:
+          - service: light.turn_on
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+      - conditions:
+          - condition: trigger
+            id: capteur1off
+          - type: is_no_motion
+            condition: device
+            device_id: 94d392c5d5f6e12857645d22063c9980
+            entity_id: binary_sensor.0x00124b002444fda8_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: 62041b233e241f00e79755bfc4dff7e3
+            entity_id: binary_sensor.0x00124b00244508ec_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: b58241388b8b79bd6056094d25ff294a
+            entity_id: binary_sensor.0x00124b002444b38c_occupancy
+            domain: binary_sensor
+        sequence:
+          - service: light.turn_off
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+      - conditions:
+          - condition: trigger
+            id: capteur2on
+        sequence:
+          - service: light.turn_on
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+      - conditions:
+          - condition: trigger
+            id: capteur2off
+          - type: is_no_motion
+            condition: device
+            device_id: 94d392c5d5f6e12857645d22063c9980
+            entity_id: binary_sensor.0x00124b002444fda8_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: 62041b233e241f00e79755bfc4dff7e3
+            entity_id: binary_sensor.0x00124b00244508ec_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: b58241388b8b79bd6056094d25ff294a
+            entity_id: binary_sensor.0x00124b002444b38c_occupancy
+            domain: binary_sensor
+        sequence:
+          - service: light.turn_off
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+      - conditions:
+          - condition: trigger
+            id: capteur3on
+        sequence:
+          - service: light.turn_on
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+      - conditions:
+          - condition: trigger
+            id: capteur3off
+          - type: is_no_motion
+            condition: device
+            device_id: 94d392c5d5f6e12857645d22063c9980
+            entity_id: binary_sensor.0x00124b002444fda8_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: 62041b233e241f00e79755bfc4dff7e3
+            entity_id: binary_sensor.0x00124b00244508ec_occupancy
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: b58241388b8b79bd6056094d25ff294a
+            entity_id: binary_sensor.0x00124b002444b38c_occupancy
+            domain: binary_sensor
+        sequence:
+          - service: light.turn_off
+            data: {}
+            target:
+              device_id: 29dedec3b756cecfab853ef4087a8f32
+mode: single
