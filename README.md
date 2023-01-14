@@ -44,7 +44,7 @@ icon: mdi:clock
 # Poubelles
 ## Résultat attendu
 Permet de savoir quand sortir et rentrer les poubelles
-Poubelles noir 2 fois par semaine
+Poubelle noire 2 fois par semaine
 Poubelle verte 1 fois par semaine
 
 Attention plusieurs automatisations dans le fichier
