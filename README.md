@@ -16,9 +16,9 @@ Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/autom
 
 ## Ajouter dans configuration.yaml
 `  
-	heures_creuses:
-    name: Heures creuses
-    icon: mdi:clock  
+heures_creuses:
+name: Heures creuses
+icon: mdi:clock  
 	`
     
 # Telecommande 4 Bouttons
@@ -40,3 +40,14 @@ Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/autom
 * Si plus aucun détecteurs ne détecte j'éteint la lumière et la prise
 
 ######  blueprint_3detector_1light_1switch.yaml
+
+# Poubelles
+## Résultat attendu
+Permet de savoir quand sortir et rentrer les poubelles
+Poubelles noir 2 fois par semaine
+Poubelle verte 1 fois par semaine
+
+Attention plusieurs automatisations dans le fichier
+######  automatisation_poubelles.yaml
+######  script_poubelles.yaml
+
