@@ -33,6 +33,7 @@ icon: mdi:clock
 * Si plus aucun détecteurs ne détecte j'éteint la lumière
 
 ######  blueprint_3detector_1light.yaml
+######  automatisation_3detector_1light.yaml
 
 # 3 detecteurs 1 lumière 1 prise
 ## Résultat attendu
@@ -40,6 +41,7 @@ icon: mdi:clock
 * Si plus aucun détecteurs ne détecte j'éteint la lumière et la prise
 
 ######  blueprint_3detector_1light_1switch.yaml
+######  automatisation_3detector_1light_1switch.yaml
 
 # Poubelles
 ## Résultat attendu
