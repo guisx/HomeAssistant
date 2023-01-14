@@ -1,0 +1,199 @@
+#***********************************************************
+#AUTOMATISATION POUBELLE NOIR
+#***********************************************************
+alias: Poubelle noir - 1 - Notif Sortir
+description: ""
+trigger:
+  - platform: time
+    at: "09:00:00"
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - thu
+    after: "09:00:00"
+action:
+  - service: notify.notify
+    data:
+      message: Sortir la poubelle noir
+      data:
+        actions:
+          - action: poubelle_noir_sortir
+            title: Poubelle sortie
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+
+alias: Poubelle noir - 2 - Action Dehors
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: poubelle_noir_sortir
+condition: []
+action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle noir - 3 - Notif Ramasser
+description: ""
+trigger:
+  - platform: time
+    at: "16:00:00"
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - thu
+    after: "16:00:00"
+action:
+  - service: notify.notify
+    data:
+      message: Le camion de poubelles est passé
+      data:
+        actions:
+          - action: poubelle_noir_rentrer
+            title: Poubelle rentrer
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle noir - 4 - Action Rentrer
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: poubelle_noir_rentrer
+condition: []
+action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle noir - 0 - Reset
+description: ""
+trigger:
+  - platform: time
+    at: "22:00:00"
+condition:
+  - condition: time
+    weekday:
+      - mon
+      - thu
+    after: "22:00:00"
+action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+#***********************************************************
+#AUTOMATISATION POUBELLE VERTE
+#***********************************************************
+alias: Poubelle verte - 1 - Notif Sortir
+description: ""
+trigger:
+  - platform: time
+    at: "09:00:00"
+condition:
+  - condition: time
+    weekday:
+      - tue
+    after: "09:00:00"
+action:
+  - service: notify.notify
+    data:
+      message: Sortir la poubelle verte
+      data:
+        actions:
+          - action: poubelle_verte_sortir
+            title: Poubelle sortie
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+
+alias: Poubelle verte - 2 - Action Dehors
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: poubelle_verte_sortir
+condition: []
+action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle verte - 3 - Notif Ramasser
+description: ""
+trigger:
+  - platform: time
+    at: "16:00:00"
+condition:
+  - condition: time
+    weekday:
+      - tue
+    after: "16:00:00"
+action:
+  - service: notify.notify
+    data:
+      message: Le camion de poubelles est passé
+      data:
+        actions:
+          - action: poubelle_verte_rentrer
+            title: Poubelle rentrer
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle verte - 4 - Action Rentrer
+description: ""
+trigger:
+  - platform: event
+    event_type: mobile_app_notification_action
+    event_data:
+      action: poubelle_verte_rentrer
+condition: []
+action:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
+
+alias: Poubelle verte - 0 - Reset
+description: ""
+trigger:
+  - platform: time
+    at: "22:00:00"
+condition:
+  - condition: time
+    weekday:
+      - tue
+    after: "22:00:00"
+action:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+mode: single
