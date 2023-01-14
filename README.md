@@ -1,6 +1,9 @@
 # HomeAssistant
 Mes différents blueprint et automatisations
 
+# Install manuel blueprint
+Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/automation/homeassitant
+
 # Heures creuses
 ## Résultat attendu
 * A 13h54 activer mon boolean heures creuses et envoyez une notif
