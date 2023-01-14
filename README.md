@@ -49,7 +49,21 @@ Permet de savoir quand sortir et rentrer les poubelles
 Poubelle noire 2 fois par semaine
 Poubelle verte 1 fois par semaine
 
+## Todo
+Carte pour la gestion
+
 Attention plusieurs automatisations dans le fichier
 ######  automatisation_poubelles.yaml
 ######  script_poubelles.yaml
+
+# Aquarium
+## Résultat attendu
+Gestion on/off et gestion nourriture et nettoyage
+
+## Todo
+Carte pour la gestion
+
+Attention plusieurs automatisations dans le fichier
+######  automatisation_aquarium.yaml
+######  script_aquarium.yaml
 
