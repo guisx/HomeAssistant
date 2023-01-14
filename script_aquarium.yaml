@@ -1,0 +1,18 @@
+aquarium_clean_reset:
+  alias: Aquarium Reset Date Nettoyage
+  sequence:
+  - service: input_datetime.set_datetime
+    data_template:
+      date: '{{ now().strftime(''%Y-%m-%d'') }}'
+    target:
+      entity_id: input_datetime.aquarium_clean_last_day
+  mode: single
+aquarium_food_reset:
+  alias: Aquarium Reset Date Nourriture
+  sequence:
+  - service: input_datetime.set_datetime
+    data_template:
+      date: '{{ now().strftime(''%Y-%m-%d'') }}'
+    target:
+      entity_id: input_datetime.aquarium_food_last_day
+  mode: single
