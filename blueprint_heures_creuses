@@ -1,0 +1,74 @@
+blueprint:
+  name: Gestion Heures Creuses
+  description: Gestion heures creuses matin et soir
+  domain: automation
+  input:
+    jour_start:
+      name: Heure creuse journee debut
+      selector:
+        time: 
+    jour_fin:
+      name: Heure creuse journee fin
+      selector:
+        time: 
+    nuit_start:
+      name: Heure creuse nuit debut
+      selector:
+        time: 
+    nuit_fin:
+      name: Heure creuse nuit fin
+      selector:
+        time:                  
+mode: restart
+max_exceeded: silent                               
+trigger: 
+  - platform: time
+    at: !input jour_start
+    id: jour_on
+  - platform: time
+    at: !input jour_fin
+    id: jour_off
+  - platform: time
+    at: !input nuit_start
+    id: nuit_on
+  - platform: time
+    at: !input nuit_fin
+    id: nuit_off      
+condition:[]           
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: jour_on
+        sequence:
+          - service: input_boolean.turn_on
+            data: {}
+            target:
+              entity_id: input_boolean.heures_creuses
+          - service: notify.notify
+            data:
+              message: Début Heures Creuses
+      - conditions:
+          - condition: trigger
+            id: jour_off
+        sequence:
+          - service: input_boolean.turn_off
+            data: {}
+            target:
+              entity_id: input_boolean.heures_creuses
+      - conditions:
+          - condition: trigger
+            id: nuit_on
+        sequence:
+          - service: input_boolean.turn_on
+            data: {}
+            target:
+              entity_id: input_boolean.heures_creuses
+      - conditions:
+          - condition: trigger
+            id: nuit_off
+        sequence:
+          - service: input_boolean.turn_off
+            data: {}
+            target:
+              entity_id: input_boolean.heures_creuses              
