@@ -1,0 +1,60 @@
+####Automatisation 1
+
+alias: Heures creuses - Jour - Start
+description: ""
+trigger:
+  - platform: time
+    at: "13:54:00"
+condition: []
+action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.heures_creuses
+  - service: notify.notify
+    data:
+      message: Début Heures Creuses
+mode: single
+
+
+alias: Heures creuses - Jour - Stop
+description: ""
+trigger:
+  - platform: time
+    at: "15:54:00"
+condition: []
+action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.heures_creuses
+mode: single
+
+
+alias: Heures creuses - Nuit - Start
+description: ""
+trigger:
+  - platform: time
+    at: "00:53:00"
+condition: []
+action:
+  - service: input_boolean.turn_on
+    data: {}
+    target:
+      entity_id: input_boolean.heures_creuses
+mode: single
+
+####Automatisation 2
+
+alias: Heures creuses - Nuit - Stop
+description: ""
+trigger:
+  - platform: time
+    at: "06:53:00"
+condition: []
+action:
+  - service: input_boolean.turn_off
+    data: {}
+    target:
+      entity_id: input_boolean.heures_creuses
+mode: single
