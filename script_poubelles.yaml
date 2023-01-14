@@ -1,0 +1,32 @@
+poubelle_verte_increment:
+  alias: Poubelle verte - Increment
+  sequence:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_verte
+  mode: single
+poubelle_noir_increment:
+  alias: Poubelle noir - Increment
+  sequence:
+  - service: counter.increment
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+  mode: single
+poubelle_noir_reset:
+  alias: Poubelle Noir Reset
+  sequence:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.poubelle_noir
+  mode: single
+poubelle_verte_reset:
+  alias: Poubelle Verte Reset
+  sequence:
+  - service: counter.reset
+    data: {}
+    target:
+      entity_id: counter.poubelle_verte
+  mode: single
