@@ -1,82 +1,43 @@
-blueprint:
-  name: Zigbee2MQTT - Detector light
-  description: Automate your Detector light via Zigbee2MQTT
-  domain: automation
-  input:
-    motion_sensor1:
-        name: Motion Sensor 1
-        description: A sensor that detects motion
-        default: []
-        selector:
-          entity:
-            integration: mqtt
-            domain: binary_sensor
-    motion_sensor2:
-        name: Motion Sensor 2
-        description: A sensor that detects motion
-        default: []
-        selector:
-          entity:
-            integration: mqtt
-            domain: binary_sensor
-    motion_sensor3:
-        name: Motion Sensor 3
-        description: A sensor that detects motion
-        selector:
-          entity:
-            integration: mqtt
-            domain: binary_sensor                        
-    light:
-        name: Light
-        description: A light that is turned on and off
-        default: []
-        selector:
-          entity:
-            integration: mqtt
-            domain: light
-mode: restart
-max_exceeded: silent                               
+alias: Automate your Detector light and switch
+description: ""
 trigger:
   - type: motion
     platform: device
-    device_id: device_id(motion_sensor1)
-    entity_id: !input motion_sensor1
+    device_id: cccbfc78f3a6f726edefcc7235e547be
+    entity_id: binary_sensor.couloir_detect_1_occupancy
     domain: binary_sensor
     id: capteur1on
   - type: motion
     platform: device
-    device_id: device_id(motion_sensor2)
-    entity_id: !input motion_sensor2
+    device_id: 6ea048e79e48e66c043c7ba86093fa2d
+    entity_id: binary_sensor.couloir_detect_2_occupancy
     domain: binary_sensor
     id: capteur2on
   - type: motion
     platform: device
-    device_id: device_id(motion_sensor3)
-    entity_id: !input motion_sensor3
+    device_id: d0fa7826b9e9d41b92290960b9f5b4b6
+    entity_id: binary_sensor.0x2c1165fffed592a2_occupancy
     domain: binary_sensor
     id: capteur3on
   - type: no_motion
     platform: device
-    device_id: device_id(motion_sensor1)
-    entity_id: !input motion_sensor1
+    device_id: cccbfc78f3a6f726edefcc7235e547be
+    entity_id: binary_sensor.couloir_detect_1_occupancy
     domain: binary_sensor
     id: capteur1off
   - type: no_motion
     platform: device
-    device_id: device_id(motion_sensor2)
-    entity_id: !input motion_sensor2
+    device_id: 6ea048e79e48e66c043c7ba86093fa2d
+    entity_id: binary_sensor.couloir_detect_2_occupancy
     domain: binary_sensor
     id: capteur2off
   - type: no_motion
     platform: device
-    device_id: device_id(motion_sensor3)
-    entity_id: !input motion_sensor3
+    device_id: d0fa7826b9e9d41b92290960b9f5b4b6
+    entity_id: binary_sensor.0x2c1165fffed592a2_occupancy
     domain: binary_sensor
     id: capteur3off
-condition:
-  - condition: state
-    entity_id: input_boolean.vacances
-    state: "off"           
+condition: []
 action:
   - choose:
       - conditions:
@@ -86,30 +47,38 @@ action:
           - service: light.turn_on
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_on
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
       - conditions:
           - condition: trigger
             id: capteur1off
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
+            device_id: cccbfc78f3a6f726edefcc7235e547be
+            entity_id: binary_sensor.couloir_detect_1_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
+            device_id: 6ea048e79e48e66c043c7ba86093fa2d
+            entity_id: binary_sensor.couloir_detect_2_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
+            device_id: d0fa7826b9e9d41b92290960b9f5b4b6
+            entity_id: binary_sensor.0x2c1165fffed592a2_occupancy
             domain: binary_sensor
         sequence:
           - service: light.turn_off
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_off
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
       - conditions:
           - condition: trigger
             id: capteur2on
@@ -117,30 +86,38 @@ action:
           - service: light.turn_on
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_on
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
       - conditions:
           - condition: trigger
             id: capteur2off
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
+            device_id: cccbfc78f3a6f726edefcc7235e547be
+            entity_id: binary_sensor.couloir_detect_1_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
+            device_id: 6ea048e79e48e66c043c7ba86093fa2d
+            entity_id: binary_sensor.couloir_detect_2_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
+            device_id: d0fa7826b9e9d41b92290960b9f5b4b6
+            entity_id: binary_sensor.0x2c1165fffed592a2_occupancy
             domain: binary_sensor
         sequence:
           - service: light.turn_off
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_off
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
       - conditions:
           - condition: trigger
             id: capteur3on
@@ -148,27 +125,36 @@ action:
           - service: light.turn_on
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_on
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
       - conditions:
           - condition: trigger
             id: capteur3off
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
+            device_id: cccbfc78f3a6f726edefcc7235e547be
+            entity_id: binary_sensor.couloir_detect_1_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
+            device_id: 6ea048e79e48e66c043c7ba86093fa2d
+            entity_id: binary_sensor.couloir_detect_2_occupancy
             domain: binary_sensor
           - type: is_no_motion
             condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
+            device_id: d0fa7826b9e9d41b92290960b9f5b4b6
+            entity_id: binary_sensor.0x2c1165fffed592a2_occupancy
             domain: binary_sensor
         sequence:
           - service: light.turn_off
             data: {}
             target:
-              entity_id: !input light
+              device_id: 2fd794b2080d4190621eea362f563f23
+          - service: switch.turn_off
+            data: {}
+            target:
+              device_id: 7fef900afa217812aa145083844486d0
+mode: single
