@@ -73,10 +73,7 @@ trigger:
     entity_id: !input motion_sensor3
     domain: binary_sensor
     id: capteur3off
-condition:
-  - condition: state
-    entity_id: input_boolean.vacances
-    state: "off"           
+condition: []          
 action:
   - choose:
       - conditions:
