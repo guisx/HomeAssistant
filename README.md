@@ -38,6 +38,9 @@ input_boolean:
 * Si un des détécteurs détecte j'allume la lumière
 * Si plus aucun détecteurs ne détecte j'éteint la lumière
 
+### Todo
+Simplifié les conditions off
+
 ### Nom des fichiers
 ######  blueprint_3detector_1light.yaml
 ######  automatisation_3detector_1light.yaml
@@ -46,6 +49,9 @@ input_boolean:
 ### Résultat attendu
 * Si un des détécteurs détecte j'allume la lumière et la prise
 * Si plus aucun détecteurs ne détecte j'éteint la lumière et la prise
+
+### Todo
+Simplifié les conditions off
 
 ### Nom des fichiers
 ######  blueprint_3detector_1light_1switch.yaml
