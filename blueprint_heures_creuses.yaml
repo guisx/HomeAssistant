@@ -34,7 +34,7 @@ trigger:
   - platform: time
     at: !input nuit_fin
     id: nuit_off      
-condition:[]           
+condition: []           
 action:
   - choose:
       - conditions:
