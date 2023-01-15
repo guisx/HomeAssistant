@@ -81,7 +81,10 @@ trigger:
     entity_id: !input motion_sensor3
     domain: binary_sensor
     id: capteur3off
-condition:[]          
+condition:
+  - condition: state
+    entity_id: input_boolean.vacances
+    state: "off"            
 action:
   - choose:
       - conditions:
@@ -95,7 +98,34 @@ action:
           - service: switch.turn_on
             data: {}
             target:
-              entity_id: !input pluglight              
+              entity_id: !input pluglight
+      - conditions:
+          - condition: trigger
+            id: capteur1off
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor1)
+            entity_id: !input motion_sensor1
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor2)
+            entity_id: !input motion_sensor2
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor3)
+            entity_id: !input motion_sensor3
+            domain: binary_sensor
+        sequence:
+          - service: light.turn_off
+            data: {}
+            target:
+              entity_id: !input light
+          - service: switch.turn_off
+            data: {}
+            target:
+              entity_id: !input pluglight                
       - conditions:
           - condition: trigger
             id: capteur2on
@@ -107,7 +137,34 @@ action:
           - service: switch.turn_on
             data: {}
             target:
-              entity_id: !input pluglight                             
+              entity_id: !input pluglight              
+      - conditions:
+          - condition: trigger
+            id: capteur2off
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor1)
+            entity_id: !input motion_sensor1
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor2)
+            entity_id: !input motion_sensor2
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor3)
+            entity_id: !input motion_sensor3
+            domain: binary_sensor
+        sequence:
+          - service: light.turn_off
+            data: {}
+            target:
+              entity_id: !input light
+          - service: switch.turn_off
+            data: {}
+            entity_id:
+              device_id: !input pluglight                
       - conditions:
           - condition: trigger
             id: capteur3on
@@ -122,11 +179,22 @@ action:
               entity_id: !input pluglight              
       - conditions:
           - condition: trigger
-            id: capteur1off
-          - condition: trigger
-            id: capteur2off
-          - condition: trigger
-            id: capteur3off            
+            id: capteur3off
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor1)
+            entity_id: !input motion_sensor1
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor2)
+            entity_id: !input motion_sensor2
+            domain: binary_sensor
+          - type: is_no_motion
+            condition: device
+            device_id: device_id(motion_sensor3)
+            entity_id: !input motion_sensor3
+            domain: binary_sensor
         sequence:
           - service: light.turn_off
             data: {}
