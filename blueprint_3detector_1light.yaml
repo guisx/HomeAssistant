@@ -86,55 +86,9 @@ action:
               entity_id: !input light
       - conditions:
           - condition: trigger
-            id: capteur1off
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
-            domain: binary_sensor
-        sequence:
-          - service: light.turn_off
-            data: {}
-            target:
-              entity_id: !input light
-      - conditions:
-          - condition: trigger
             id: capteur2on
         sequence:
           - service: light.turn_on
-            data: {}
-            target:
-              entity_id: !input light
-      - conditions:
-          - condition: trigger
-            id: capteur2off
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
-            domain: binary_sensor
-        sequence:
-          - service: light.turn_off
             data: {}
             target:
               entity_id: !input light
@@ -148,22 +102,11 @@ action:
               entity_id: !input light
       - conditions:
           - condition: trigger
-            id: capteur3off
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor1)
-            entity_id: !input motion_sensor1
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor2)
-            entity_id: !input motion_sensor2
-            domain: binary_sensor
-          - type: is_no_motion
-            condition: device
-            device_id: device_id(motion_sensor3)
-            entity_id: !input motion_sensor3
-            domain: binary_sensor
+            id: capteur1off
+          - condition: trigger
+            id: capteur2off
+          - condition: trigger
+            id: capteur3off            
         sequence:
           - service: light.turn_off
             data: {}
