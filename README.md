@@ -33,6 +33,8 @@ input_boolean:
 ######  heures_creuses_blueprint.yaml
 ######  heures_creuses_automatisation.yaml (ancienne utilisation avant blueprint / Attention 2 automatisation)
 
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/guisx/HomeAssistant/blob/main/heures_creuses_blueprint.yaml)
+
 # Aquarium
 ### Résultat attendu
 * Blueprint - Gestion on/off par une prise de la lumière 
@@ -58,15 +60,19 @@ input_datetime:
 ######  aquarium_script.yaml
 ######  aquarium_card.yaml (plugin banner-card)
 ######  aquarium_automatisation.yaml (ancienne utilisation avant blueprint)
-	
+
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/guisx/HomeAssistant/blob/main/aquarium_blueprint.yaml)
     
 # Telecommande 4 Bouttons
+
 ### Nom des fichiers
 ######  blueprint_telecommande_4btn.yaml
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/guisx/HomeAssistant/blob/main/blueprint_telecommande_4btn.yaml)
 
 # Telecommande 6 Bouttons
 ### Nom des fichiers
 ######  blueprint_telecommande_6btn.yaml
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/HomeAssistant/blob/main/blueprint_telecommande_6btn.yaml)
 
 # 3 detecteurs 1 lumière
 ### Résultat attendu
