@@ -80,27 +80,33 @@ input_datetime:
 
 # 3 detecteurs 1 lumière
 ### Résultat attendu
-* Si un des détécteurs détecte j'allume la lumière
-* Si plus aucun détecteurs ne détecte j'éteint la lumière
+* Si un des détécteurs détecte allume la lumière
+* Si plus aucun détecteurs ne détecte éteint la lumière
 
 ### Todo
 Simplifié les conditions off
 
 ### Nom des fichiers
-######  blueprint_3detector_1light.yaml
-######  automatisation_3detector_1light.yaml
+######  3detector_1light_blueprint.yaml
+######  3detector_1light_automatisation.yaml
+######  3detector_1light_cardinfos.yaml
+######  3detector_1light_card.yaml
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/HomeAssistant/blob/main/3detector_1light_blueprint.yaml)
 
 # 3 detecteurs 1 lumière 1 prise
 ### Résultat attendu
-* Si un des détécteurs détecte j'allume la lumière et la prise
+* Si un des détécteurs détecte allume la lumière et la prise
 * Si plus aucun détecteurs ne détecte j'éteint la lumière et la prise
 
 ### Todo
 Simplifié les conditions off
 
 ### Nom des fichiers
-######  blueprint_3detector_1light_1switch.yaml
-######  automatisation_3detector_1light_1switch.yaml
+######  3detector_1light_1switch_blueprint.yaml
+######  3detector_1light_1switch_automatisation.yaml
+######  3detector_1light_1switch_cardinfos.yaml
+######  3detector_1light_1switch_card.yaml
+[![Open your Home Assistant instance and show the blueprint import dialog with a specific blueprint pre-filled.](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A//raw.githubusercontent.com/HomeAssistant/blob/main/3detector_1light_1switch_blueprint.yaml)
 
 # Poubelles
 ### Résultat attendu
