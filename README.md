@@ -6,10 +6,20 @@ Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/autom
 
 # Heures creuses
 ### Résultat attendu
-* A 13h54 activer mon boolean heures creuses et envoyez une notif sur mon téléphone
-* A 15h54 desactiver mon boolean
-* A 00h53 activer mon boolean
-* A 06h53 desactiver mon boolean
+* Heures creuses française 13h54/15h54 // 00h53/06h53
+* A 13h54 active le boolean "heures_creuses" et envoie une notification sur les téléphones du réseau
+* A 15h54 desactive le boolean "heures_creuses"
+* A 00h53 activer le boolean "heures_creuses"
+* A 06h53 desactiver le boolean "heures_creuses"
+
+### Gestion boolean vacances
+Remplacer condition: [] par
+```yaml
+condition:
+  - condition: state
+    entity_id: input_boolean.vacances
+    state: "off"  
+```
 
 ### Ajouter dans configuration.yaml
 ```yaml
@@ -20,9 +30,34 @@ input_boolean:
 ```
 
 ### Nom des fichiers
-######  blueprint_heures_creuses.yaml
-######  automatisation_heures_creuses.yaml
+######  heures_creuses_blueprint.yaml
+######  heures_creuses_automatisation.yaml (ancienne utilisation avant blueprint / Attention 2 automatisation)
 
+# Aquarium
+### Résultat attendu
+* Blueprint - Gestion on/off par une prise de la lumière 
+* Script/Card - Gestion nourriture et nettoyage
+
+### Ajouter dans configuration.yaml
+```yaml
+input_datetime: 
+  aquarium_nourriture:
+    name: Aquarium nourriture
+    icon: mdi:food-fork-drink
+    has_date: true
+    has_time: false
+  aquarium_nettoyage:
+    name: Aquarium nettoyage
+    icon: mdi:spray-bottle
+    has_date: true
+    has_time: false 
+```
+
+### Nom des fichiers
+######  aquarium_blueprint.yaml
+######  aquarium_script.yaml
+######  aquarium_card.yaml (plugin banner-card)
+######  aquarium_automatisation.yaml (ancienne utilisation avant blueprint)
 	
     
 # Telecommande 4 Bouttons
@@ -79,29 +114,3 @@ Attention plusieurs automatisations dans le fichier
 ######  automatisation_poubelles.yaml
 ######  script_poubelles.yaml
 ###### card_poubelles.yaml
-
-# Aquarium
-### Résultat attendu
-* Blueprint - Gestion on/off par une prise de la lumière 
-* Script/Card - Gestion nourriture et nettoyage
-
-### Ajouter dans configuration.yaml
-```yaml
-input_datetime: 
-  aquarium_nourriture:
-    name: Aquarium nourriture
-    icon: mdi:food-fork-drink
-    has_date: true
-    has_time: false
-  aquarium_nettoyage:
-    name: Aquarium nettoyage
-    icon: mdi:spray-bottle
-    has_date: true
-    has_time: false 
-```
-
-### Nom des fichiers
-######  aquarium_blueprint.yaml
-######  aquarium_script.yaml
-######  aquarium_card.yaml (plugin banner-card)
-######  aquarium_automatisation.yaml (ancienne utilisation avant blueprint)
