@@ -84,7 +84,8 @@ input_datetime:
 * Si plus aucun détecteurs ne détecte éteint la lumière
 
 ### Todo
-Simplifié les conditions off
+* Simplifié les conditions off
+* 3detector_1light_card.yaml a finir
 
 ### Nom des fichiers
 ######  3detector_1light_blueprint.yaml
