@@ -1,0 +1,49 @@
+blueprint:
+  name: Gestion lumière aquarium
+  description: Gestion allumage extinction lumière aquarium
+  domain: automation
+  input:
+    jour_start:
+      name: Heure debut
+      selector:
+        time: 
+    jour_fin:
+      name: Heure fin
+      selector:
+        time:     
+    plug:
+        name: Plug
+        description: A plug that is turned on and off
+        default: []
+        selector:
+          entity:
+            integration: mqtt
+            domain: switch                      
+mode: restart
+max_exceeded: silent                               
+trigger: 
+  - platform: time
+    at: !input jour_start
+    id: jour_on
+  - platform: time
+    at: !input jour_fin
+    id: jour_off    
+condition: []           
+action:
+  - choose:
+      - conditions:
+          - condition: trigger
+            id: jour_on
+        sequence:
+          - service: switch.turn_on
+            data: {}
+            target:
+              entity_id: !input plug  
+      - conditions:
+          - condition: trigger
+            id: jour_off
+        sequence:
+          - service: switch.turn_off
+            data: {}
+            target:
+              entity_id: !input plug  
