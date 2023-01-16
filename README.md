@@ -103,4 +103,5 @@ input_datetime:
 ### Nom des fichiers
 ######  aquarium_blueprint.yaml
 ######  aquarium_script.yaml
-######  aquarium_card.yaml
+######  aquarium_card.yaml (plugin banner-card)
+######  aquarium_automatisation.yaml (ancienne utilisation avant blueprint)
