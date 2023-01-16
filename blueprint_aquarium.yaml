@@ -11,16 +11,14 @@ blueprint:
       name: Heure fin
       selector:
         time:     
-    plug:
-        name: Plug
-        description: A plug that is turned on and off
+    prise:
+        name: Prise
+        description: Prise On/Off
         default: []
         selector:
           entity:
             integration: mqtt
-            domain: switch                      
-mode: restart
-max_exceeded: silent                               
+            domain: switch                                             
 trigger: 
   - platform: time
     at: !input jour_start
@@ -38,7 +36,7 @@ action:
           - service: switch.turn_on
             data: {}
             target:
-              entity_id: !input plug  
+              entity_id: !input prise  
       - conditions:
           - condition: trigger
             id: jour_off
@@ -46,4 +44,6 @@ action:
           - service: switch.turn_off
             data: {}
             target:
-              entity_id: !input plug  
+              entity_id: !input prise  
+mode: restart
+max_exceeded: silent               
