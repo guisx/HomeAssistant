@@ -1,0 +1,59 @@
+type: vertical-stack
+cards:
+  - type: custom:banner-card
+    heading: 🧐 Detection
+    background: '#93441A'
+    color: black
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        entity: binary_sensor.couloir_detect_1_occupancy
+        name: Detect 1
+        size: 44px
+        state:
+          - value: 'off'
+            color: grey
+            icon: mdi:alien-outline
+          - value: 'on'
+            color: yellow
+            icon: mdi:human-child
+      - type: custom:button-card
+        entity: binary_sensor.couloir_detect_2_occupancy
+        name: Detect 2
+        size: 44px
+        state:
+          - value: 'off'
+            color: grey
+            icon: mdi:alien-outline
+          - value: 'on'
+            color: yellow
+            icon: mdi:human-child
+      - type: custom:button-card
+        entity: binary_sensor.0x2c1165fffed592a2_occupancy
+        name: Detect 3
+        size: 44px
+        state:
+          - value: 'off'
+            color: grey
+            icon: mdi:alien-outline
+          - value: 'on'
+            color: yellow
+            icon: mdi:human-child
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: light.0xb4e3f9fffec09c27
+        name: Plafond
+        icon: mdi:ceiling-light
+        show_state: false
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: switch.0x50325ffffe398ab3
+        name: Chevet
+        icon: mdi:lamp
+        show_state: false
