@@ -4,6 +4,10 @@ Mes différents blueprint et automatisations
 # Installation manuelle d'un blueprint
 Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/automation/homeassitant
 
+#Plugins card utilisés
+* Banner card => https://github.com/nervetattoo/banner-card
+* Button card => https://github.com/custom-cards/button-card
+
 # Heures creuses
 ### Résultat attendu
 * Heures creuses française 13h54/15h54 // 00h53/06h53
