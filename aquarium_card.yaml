@@ -1,0 +1,41 @@
+type: vertical-stack
+cards:
+  - type: custom:banner-card
+    heading: 🐠 Aquarium
+    background: '#581845'
+    color: black
+  - type: entity
+    entity: input_datetime.aquarium_nourriture
+  - type: entity
+    entity: input_datetime.aquarium_nettoyage
+  - square: true
+    columns: 3
+    type: grid
+    cards:
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.aquarium_nourriture_reset
+        name: Nourriture
+        icon: mdi:food-fork-drink
+        icon_height: 20px
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: script.aquarium_nettoyage_reset
+        name: Nettoyage
+        icon: mdi:spray-bottle
+        icon_height: 20px
+      - show_name: true
+        show_icon: true
+        type: button
+        tap_action:
+          action: toggle
+        entity: switch.0xb4e3f9fffe7862c0
+        icon: mdi:fishbowl
+        name: Aquarium
+        icon_height: 30px
