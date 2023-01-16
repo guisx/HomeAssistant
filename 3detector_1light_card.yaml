@@ -4,10 +4,10 @@ cards:
     heading: 🧐 Detection
     background: '#93441A'
     color: black
-  - type: horizontal-stack
+ - type: horizontal-stack
     cards:
       - type: custom:button-card
-        entity: binary_sensor.couloir_detect_1_occupancy
+        entity: binary_sensor.0x00124b002444fda8_occupancy
         name: Detect 1
         size: 44px
         state:
@@ -18,7 +18,7 @@ cards:
             color: yellow
             icon: mdi:human-child
       - type: custom:button-card
-        entity: binary_sensor.couloir_detect_2_occupancy
+        entity: binary_sensor.0x00124b00244508ec_occupancy
         name: Detect 2
         size: 44px
         state:
@@ -29,7 +29,7 @@ cards:
             color: yellow
             icon: mdi:human-child
       - type: custom:button-card
-        entity: binary_sensor.0x2c1165fffed592a2_occupancy
+        entity: binary_sensor.0x00124b002444b38c_occupancy
         name: Detect 3
         size: 44px
         state:
@@ -44,16 +44,6 @@ cards:
         type: button
         tap_action:
           action: toggle
-        entity: light.0xb4e3f9fffec09c27
-        name: Plafond
-        icon: mdi:ceiling-light
-        show_state: false
-      - show_name: true
-        show_icon: true
-        type: button
-        tap_action:
-          action: toggle
-        entity: switch.0x50325ffffe398ab3
-        name: Chevet
-        icon: mdi:lamp
-        show_state: false
+        entity: light.0xa4c1380939ff4411
+        name: LED
+        icon: mdi:led-strip-variant
