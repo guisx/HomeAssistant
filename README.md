@@ -1,12 +1,12 @@
 # HomeAssistant
 Mes différents blueprint et automatisations
 
-# Install manuel blueprint
+# Installation manuelle d'un blueprint
 Avec FileEditor crée un fichier yaml dans le dossier : /config/blueprints/automation/homeassitant
 
 # Heures creuses
 ### Résultat attendu
-* A 13h54 activer mon boolean heures creuses et envoyez une notif
+* A 13h54 activer mon boolean heures creuses et envoyez une notif sur mon téléphone
 * A 15h54 desactiver mon boolean
 * A 00h53 activer mon boolean
 * A 06h53 desactiver mon boolean
@@ -59,7 +59,7 @@ Simplifié les conditions off
 
 # Poubelles
 ### Résultat attendu
-Permet de savoir quand sortir et rentrer les poubelles
+Permet de savoir quand sortir et rentrer les poubelles avec notif sur téléphone
 Poubelle noire 2 fois par semaine
 Poubelle verte 1 fois par semaine
 
@@ -82,7 +82,7 @@ Attention plusieurs automatisations dans le fichier
 
 # Aquarium
 ### Résultat attendu
-Gestion on/off et gestion nourriture et nettoyage
+Gestion on/off de la lumière et gestion nourriture et nettoyage
 
 ### Todo
 * Carte pour la gestion
