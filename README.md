@@ -98,6 +98,9 @@ Permet de savoir quand sortir et rentrer les poubelles avec notif sur téléphon
 Poubelle noire 2 fois par semaine
 Poubelle verte 1 fois par semaine
 
+### Todo
+Revoir le code et crée un blueprint
+
 ### Ajouter dans configuration.yaml
 ```yaml
 counter:
@@ -111,6 +114,6 @@ counter:
 
 ### Nom des fichiers
 Attention plusieurs automatisations dans le fichier
-######  automatisation_poubelles.yaml
-######  script_poubelles.yaml
-###### card_poubelles.yaml
+######  poubelles_automatisation.yaml
+######  poubelles_script.yaml
+###### poubelles_card.yaml
