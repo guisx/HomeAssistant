@@ -1,0 +1,38 @@
+type: entities
+entities:
+  - entity: binary_sensor.couloir_detect_1_occupancy
+    name: Detect 1 Status
+  - entity: binary_sensor.couloir_detect_1_occupancy
+    name: Detect 1 Link
+    type: attribute
+    attribute: linkquality
+  - entity: binary_sensor.couloir_detect_2_occupancy
+    name: Detect 2 Status
+  - entity: binary_sensor.couloir_detect_2_occupancy
+    name: Detect 2 Link
+    type: attribute
+    attribute: linkquality
+  - entity: binary_sensor.0x2c1165fffed592a2_occupancy
+    name: Detect 3 Status
+  - entity: binary_sensor.0x2c1165fffed592a2_occupancy
+    name: Detect 3 Link
+    type: attribute
+    attribute: linkquality
+  - entity: switch.0x50325ffffe398ab3
+    name: Prise
+    icon: mdi:power-plug
+  - entity: light.0xb4e3f9fffec09c27
+    name: Ampoule Status
+  - entity: light.0xb4e3f9fffec09c27
+    name: Ampoule Link
+    type: attribute
+    attribute: linkquality
+  - entity: sensor.couloir_detect_1_battery
+    name: Detect 1 batterie
+  - entity: sensor.couloir_detect_2_battery
+    name: Detect 2 batterie
+  - entity: sensor.0x2c1165fffed592a2_battery
+    name: Detect 3 batterie
+title: Couloir
+state_color: true
+show_header_toggle: false
