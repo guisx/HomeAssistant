@@ -82,8 +82,8 @@ Attention plusieurs automatisations dans le fichier
 
 # Aquarium
 ### Résultat attendu
-Blueprint - Gestion on/off par une prise de la lumière 
-Script/Card - Gestion nourriture et nettoyage
+* Blueprint - Gestion on/off par une prise de la lumière 
+* Script/Card - Gestion nourriture et nettoyage
 
 ### Ajouter dans configuration.yaml
 ```yaml
