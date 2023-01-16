@@ -82,11 +82,8 @@ Attention plusieurs automatisations dans le fichier
 
 # Aquarium
 ### Résultat attendu
-Gestion on/off de la lumière et gestion nourriture et nettoyage
-
-### Todo
-* Carte pour la gestion
-* Blueprint
+Blueprint - Gestion on/off par une prise de la lumière 
+Script/Card - Gestion nourriture et nettoyage
 
 ### Ajouter dans configuration.yaml
 ```yaml
@@ -104,7 +101,6 @@ input_datetime:
 ```
 
 ### Nom des fichiers
-Attention plusieurs automatisations dans le fichier
-######  automatisation_aquarium.yaml
-######  script_aquarium.yaml
-
+######  aquarium_blueprint.yaml
+######  aquarium_script.yaml
+######  aquarium_card.yaml
